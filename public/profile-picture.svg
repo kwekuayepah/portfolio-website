@@ -1,0 +1,6 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="160" fill="#2F3349"/>
+  <circle cx="80" cy="65" r="25" fill="#E5E7EB"/>
+  <path d="M80 95C25.2 149.3 10 127 10 140H150C150 127 134.8 149.3 80 95Z" fill="#E5E7EB"/>
+  <text x="80" y="145" font-family="monospace" font-size="8" fill="#9CA3AF" text-anchor="middle">Kweku Ayepah</text>
+</svg>
