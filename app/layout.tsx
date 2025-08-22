@@ -5,7 +5,7 @@ import { ThemeProvider } from './components/ThemeProvider'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-const ibmPlexMono = IBM_Plex_Mono({ 
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
@@ -13,7 +13,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Kweku Ayepah | Welcome, Developer',
+  title: 'The Kweku Ayepah',
   description: 'A place for developers to have a great time while learning about backend development, microservices, and scalable systems.',
   keywords: 'backend engineer, software engineer, microservices, cloud architecture, TypeScript, Node.js, Python',
   authors: [{ name: 'Kweku Ayepah' }],

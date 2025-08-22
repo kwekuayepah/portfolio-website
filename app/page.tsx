@@ -1,139 +1,204 @@
-import Breadcrumb from './components/Breadcrumb'
-import { Calendar } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 interface Post {
+  id: string
   title: string
   description: string
   date: string
   slug: string
-  category: string
+  tags: string[]
+  readTime: string
+  category: 'technical' | 'personal'
 }
 
-const featuredPosts: Post[] = [
+const technicalPosts: Post[] = [
   {
+    id: '1',
     title: 'Building Scalable Microservices Architecture',
     description: 'Learn how to design and implement microservices that scale with your business needs, covering essential patterns from service discovery to load balancing.',
     date: 'May 13, 2025',
     slug: 'building-scalable-microservices-architecture',
-    category: 'Backend Development'
+    tags: ['Microservices', 'Architecture', 'Backend'],
+    readTime: '8 min read',
+    category: 'technical'
   },
   {
-    title: 'Advanced Backend Development with Node.js and TypeScript', 
+    id: '2', 
+    title: 'Advanced Backend Development with Node.js and TypeScript',
     description: 'Dive into advanced Node.js patterns and TypeScript techniques for building robust backend applications with clean architecture.',
     date: 'May 6, 2025',
     slug: 'advanced-backend-development-nodejs-typescript',
-    category: 'Backend Development'
+    tags: ['Node.js', 'TypeScript', 'Backend'],
+    readTime: '12 min read',
+    category: 'technical'
+  }
+]
+
+const personalPosts: Post[] = [
+  {
+    id: '3',
+    title: 'Finding Balance: Life as a Software Engineer in Ghana',
+    description: 'Reflections on navigating career growth, personal interests, and cultural identity while building a tech career from Accra.',
+    date: 'April 28, 2025',
+    slug: 'finding-balance-life-engineer-ghana',
+    tags: ['Life', 'Ghana', 'Career', 'Balance'],
+    readTime: '6 min read',
+    category: 'personal'
   },
   {
-    title: 'Database Optimization for High-Traffic Applications',
-    description: 'Master database optimization techniques including indexing strategies, query optimization, and connection pooling for applications handling millions of requests.',
-    date: 'April 28, 2025', 
-    slug: 'database-optimization-high-traffic',
-    category: 'Database'
-  },
-  {
-    title: 'Implementing Authentication & Authorization Systems',
-    description: 'Step-by-step guide to building secure authentication systems using JWT tokens, OAuth 2.0, and role-based access control.',
+    id: '4',
+    title: 'The Art of Basketball Strategy: Lessons for Life',
+    description: 'What watching basketball taught me about patience, strategy, and finding beauty in the complexity of teamwork.',
     date: 'April 15, 2025',
-    slug: 'authentication-authorization-systems',
-    category: 'Security'
+    slug: 'basketball-strategy-lessons-life',
+    tags: ['Basketball', 'Strategy', 'Life Lessons', 'Sports'],
+    readTime: '5 min read',
+    category: 'personal'
   }
 ]
 
 export default function Home() {
-  const breadcrumbItems = [
-    { label: 'Home', current: true }
-  ]
-
   return (
-    <>
-      <Breadcrumb items={breadcrumbItems} />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-8">
-        {/* Hero Section with Profile */}
-        <section className="mb-16">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            {/* Profile Picture */}
-            <div className="flex-shrink-0">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-skin-line">
-                <img 
-                  src="/IMG 0473.jpg" 
-                  alt="Kweku Ayepah - Backend Engineer" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="w-32 md:w-40 mt-4">
-                <ul className="text-center text-skin-base text-sm font-medium leading-tight list-disc list-inside space-y-1">
-                  <li>Software Engineer</li>
-                  <li>Problem Solver</li>
-                  <li>Explorer</li>
-                  <li>Continuous Learner</li>
-                </ul>
-              </div>
-            </div>
-            
-            {/* Welcome Content */}
-            <div className="flex-1">
-              <h1 className="text-3xl font-medium text-skin-base mb-2">Hey, there! 👋</h1>
-              <p className="text-skin-base mb-6">
-                I'm a software engineer with a background in computer engineering and a passion for solving complex problems. 
-                With demonstrated expertise in fintech and payment solutions, I build scalable systems that serve both 
-                businesses and customers.
-              </p>
-              <div className="text-skin-base mb-6">
-                <p className="mb-4">When I'm not architecting distributed systems, you'll find me:</p>
-                <ul className="space-y-2 ml-4">
-                  <li><strong>Staying Active</strong>: At the gym, pushing my limits and maintaining balance.</li>
-                  <li><strong>Court Side</strong>: Watching basketball and appreciating the strategy behind the game.</li>
-                  <li><strong>Capturing Moments</strong>: Photography while exploring Ghana's rich landscapes and venturing beyond borders.</li>
-                  <li><strong>Discovering Life</strong>: On a personal journey to uncover what makes life fascinating through travel and new experiences.</li>
-                </ul>
-              </div>
-              <p className="text-skin-base">
-                I'm a learner. I love to challenge myself to learn new things and solve complex problems. I enjoy using 
-                open source projects. This is my way of motivating myself that there's more knowledge to be acquired.
-              </p>
-            </div>
+    <main className="max-w-2xl mx-auto px-4 py-16">
+      <div className="text-center mb-16">
+        {/* Profile Picture */}
+        <div className="mb-8">
+          <div className="w-24 h-24 mx-auto rounded-full overflow-hidden">
+            <img 
+              src="/IMG 0473.jpg" 
+              alt="Kweku Ayepah" 
+              className="w-full h-full object-cover"
+            />
           </div>
-        </section>
+        </div>
         
-        <div className="max-w-3xl">
-          <section className="mb-16">
-            <h2 className="text-2xl font-medium text-skin-base mb-6">Featured Posts</h2>
-          <ul className="space-y-6">
-            {featuredPosts.slice(0, 1).map((post, index) => (
-              <li key={index} className="my-6">
+        {/* Name and Title */}
+        <h1 className="text-2xl font-medium text-skin-primary mb-2">Kweku Ayepah</h1>
+        <p className="text-skin-base text-base mb-6">Software Engineer</p>
+        
+        {/* Bio */}
+        <p className="text-skin-base text-base mb-12 max-w-2xl mx-auto text-left">
+          From architecting distributed payment systems to capturing Ghana's stunning landscapes through my lens, I'm a software engineer who believes the best solutions come from understanding both complex code and the world around us. Currently building scalable fintech solutions and sharing my thoughts on everything from system architecture to life's unexpected moments, while staying curious about what's next.
+        </p>
+        
+      </div>
+      
+      {/* Writing Sections */}
+      <div className="border-t border-skin-line pt-8">
+        <div className="mb-8">
+          <h2 className="text-skin-primary text-xl font-medium">Kweku's Thoughts...</h2>
+        </div>
+        
+        <div className="space-y-12">
+          {/* Technical Writing */}
+          <section>
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-skin-primary text-base font-medium">Technical</h3>
+              <a 
+                href="/posts?category=technical" 
+                className="text-skin-accent hover:text-skin-primary transition-colors text-sm"
+              >
+                View all →
+              </a>
+            </div>
+          <div className="space-y-4">
+            {technicalPosts.map((post) => (
+              <article key={post.id} className="border border-skin-line rounded-lg p-4 hover:border-skin-accent transition-colors">
                 <a 
                   href={`/posts/${post.slug}`}
-                  className="text-skin-accent font-medium text-lg underline-offset-4 decoration-dashed focus-visible:no-underline focus-visible:underline-offset-0 inline-block"
+                  className="group block"
                 >
-                  <h3 className="font-medium text-lg decoration-dashed hover:underline">
-                    {post.title}
-                  </h3>
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className="text-skin-primary text-base font-medium group-hover:text-skin-accent transition-colors flex-1 pr-2">
+                      {post.title}
+                    </h3>
+                    <span className="inline-block px-3 py-1 text-sm bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded flex-shrink-0">
+                      Technical
+                    </span>
+                  </div>
+                  
+                  <p className="text-skin-base text-sm leading-relaxed mb-4">
+                    {post.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap gap-2">
+                      {post.tags.slice(0, 3).map((tag, index) => (
+                        <span 
+                          key={index}
+                          className="inline-block px-3 py-1 text-sm bg-skin-card text-skin-base rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-skin-base">
+                      <span>{post.date}</span>
+                      <span>•</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
                 </a>
-                <div className="opacity-80 flex items-center space-x-2 mt-2">
-                  <Calendar className="w-5 h-5 fill-skin-base" aria-hidden="true" />
-                  <span className="sr-only">Posted on:</span>
-                  <span className="italic text-sm text-skin-base">{post.date}</span>
-                  <span className="mx-2 text-skin-base">•</span>
-                  <span className="text-sm text-skin-base">{post.category}</span>
-                </div>
-                <p className="text-skin-base mt-2">{post.description}</p>
-              </li>
+              </article>
             ))}
-          </ul>
-          
-          <div className="mt-8">
-            <a 
-              href="/posts" 
-              className="text-skin-accent font-medium hover:underline"
-            >
-              View all posts →
-            </a>
           </div>
         </section>
-        
+
+          {/* Personal Writing */}
+          <section>
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-skin-primary text-base font-medium">Personal</h3>
+              <a 
+                href="/posts?category=personal" 
+                className="text-skin-accent hover:text-skin-primary transition-colors text-sm"
+              >
+                View all →
+              </a>
+            </div>
+          <div className="space-y-4">
+            {personalPosts.map((post) => (
+              <article key={post.id} className="border border-skin-line rounded-lg p-4 hover:border-skin-accent transition-colors">
+                <a 
+                  href={`/posts/${post.slug}`}
+                  className="group block"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className="text-skin-primary text-base font-medium group-hover:text-skin-accent transition-colors flex-1 pr-2">
+                      {post.title}
+                    </h3>
+                    <span className="inline-block px-3 py-1 text-sm bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded flex-shrink-0">
+                      Personal
+                    </span>
+                  </div>
+                  
+                  <p className="text-skin-base text-sm leading-relaxed mb-4">
+                    {post.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap gap-2">
+                      {post.tags.slice(0, 3).map((tag, index) => (
+                        <span 
+                          key={index}
+                          className="inline-block px-3 py-1 text-sm bg-skin-card text-skin-base rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-skin-base">
+                      <span>{post.date}</span>
+                      <span>•</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))}
+          </div>
+          </section>
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   )
 }

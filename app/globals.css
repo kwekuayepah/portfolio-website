@@ -7,21 +7,23 @@
 :root {
   /* Light theme colors */
   --color-fill: 255, 255, 255;
-  --color-text-base: 56, 58, 64;
-  --color-accent: 239, 68, 68;
-  --color-card: 230, 230, 230;
-  --color-card-muted: 205, 205, 205;
-  --color-border: 236, 239, 244;
+  --color-text-base: 113, 113, 122;
+  --color-text-primary: 24, 24, 27;
+  --color-accent: 59, 130, 246;
+  --color-card: 249, 250, 251;
+  --color-card-muted: 243, 244, 246;
+  --color-border: 229, 231, 235;
 }
 
 :root.dark {
   /* Dark theme colors */
-  --color-fill: 47, 58, 65;
-  --color-text-base: 230, 230, 230;
-  --color-accent: 255, 107, 1;
-  --color-card: 52, 63, 96;
-  --color-card-muted: 138, 51, 2;
-  --color-border: 171, 75, 8;
+  --color-fill: 9, 9, 11;
+  --color-text-base: 161, 161, 170;
+  --color-text-primary: 244, 244, 245;
+  --color-accent: 96, 165, 250;
+  --color-card: 24, 24, 27;
+  --color-card-muted: 39, 39, 42;
+  --color-border: 63, 63, 70;
 }
 
 *{
@@ -193,6 +195,10 @@ a{
   
   .text-skin-accent {
     color: rgb(var(--color-accent));
+  }
+  
+  .text-skin-primary {
+    color: rgb(var(--color-text-primary));
   }
   
   .bg-skin-accent {

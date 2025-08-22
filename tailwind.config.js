@@ -12,6 +12,7 @@ module.exports = {
         skin: {
           fill: 'rgb(var(--color-fill) / <alpha-value>)',
           base: 'rgb(var(--color-text-base) / <alpha-value>)',
+          primary: 'rgb(var(--color-text-primary) / <alpha-value>)',
           accent: 'rgb(var(--color-accent) / <alpha-value>)',
           card: 'rgb(var(--color-card) / <alpha-value>)',
           'card-muted': 'rgb(var(--color-card-muted) / <alpha-value>)',
@@ -20,20 +21,13 @@ module.exports = {
       },
       fontFamily: {
         mono: ['var(--font-ibm-plex-mono)', 'ui-monospace', 'SFMono-Regular', 'Roboto Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'],
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.5s ease-out',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'base': ['1rem', { lineHeight: '1.5rem' }],
+        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
       },
     },
   },

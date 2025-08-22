@@ -1,104 +1,73 @@
-import Breadcrumb from '../components/Breadcrumb'
-
 export default function AboutPage() {
-  const breadcrumbItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About', current: true }
-  ]
-
   return (
-    <>
-      <Breadcrumb items={breadcrumbItems} />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-8">
-        {/* Profile Header */}
-        <section className="mb-12">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="flex-shrink-0">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-skin-line">
-                <img 
-                  src="/IMG 0473.jpg" 
-                  alt="Kweku Ayepah - Backend Engineer" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+    <main className="max-w-2xl mx-auto px-4 py-8">
+      <h1 className="text-2xl font-medium text-skin-primary mb-8">About</h1>
+      
+      <div className="space-y-6">
+        <section>
+          <h2 className="text-skin-primary text-lg font-medium mb-6">Who I Am</h2>
+          <div className="text-skin-base text-base leading-relaxed space-y-4">
+            <p>
+              I'm a software engineer with a background in computer engineering and a passion for solving complex problems. 
+              With demonstrated expertise in fintech and payment solutions, I build scalable systems that serve both 
+              businesses and customers.
+            </p>
+            <div>
+              <p className="mb-3">When I'm not architecting distributed systems, you'll find me:</p>
+              <ul className="space-y-1 pl-4">
+                <li><span className="text-skin-primary">Staying Active:</span> At the gym, pushing my limits and maintaining balance.</li>
+                <li><span className="text-skin-primary">Court Side:</span> Watching basketball and appreciating the strategy behind the game.</li>
+                <li><span className="text-skin-primary">Capturing Moments:</span> Photography while exploring Ghana's rich landscapes and venturing beyond borders.</li>
+                <li><span className="text-skin-primary">Discovering Life:</span> On a personal journey to uncover what makes life fascinating through travel and new experiences.</li>
+              </ul>
             </div>
-            <div className="flex-1">
-              <h1 className="text-3xl font-medium text-skin-base mb-2">About</h1>
-              <p className="text-skin-base mb-6">Learn more about my journey as a backend engineer.</p>
-            </div>
+            <p>
+              I'm a learner. I love to challenge myself to learn new things and solve complex problems. I enjoy using 
+              open source projects. This is my way of motivating myself that there's more knowledge to be acquired.
+            </p>
           </div>
         </section>
         
-        <div className="max-w-3xl">
-          <div className="prose prose-lg max-w-none">
-            <section className="mb-12">
-              <h2 className="text-2xl font-medium text-skin-base mb-6">Who I Am</h2>
-              <p className="text-skin-base leading-relaxed mb-6">
-                I'm Kweku Ayepah, a backend engineer with over 5 years of experience building scalable, 
-                high-performance applications. My passion lies in creating robust systems that 
-                handle real-world challenges with elegant solutions.
+        <section className="border-t border-skin-line pt-6">
+          <h2 className="text-skin-primary text-lg font-medium mb-6">Get in Touch</h2>
+          <div className="text-skin-base text-base leading-relaxed space-y-4">
+            <p>
+              I'm always interested in connecting with fellow developers, discussing new technologies, 
+              or collaborating on interesting projects. Feel free to reach out!
+            </p>
+            <div className="space-y-2">
+              <p>
+                <span className="text-skin-primary">Email:</span> 
+                <a href="mailto:kweku.ayepah@gmail.com" className="text-skin-accent hover:text-skin-primary transition-colors ml-1">
+                  kweku.ayepah@gmail.com
+                </a>
               </p>
-              <p className="text-skin-base leading-relaxed mb-6">
-                I specialize in microservices architecture, database optimization, and API design. 
-                My approach combines technical excellence with practical problem-solving to deliver 
-                systems that not only work but scale gracefully under pressure.
+              <p>
+                <span className="text-skin-primary">LinkedIn:</span> 
+                <a 
+                  href="https://www.linkedin.com/in/kweku-ayepah-mensah-251453131/" 
+                  className="text-skin-accent hover:text-skin-primary transition-colors ml-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  kweku-ayepah-mensah
+                </a>
               </p>
-            </section>
-            
-            <section className="mb-12">
-              <h2 className="text-2xl font-medium text-skin-base mb-6">What I Do</h2>
-              <p className="text-skin-base leading-relaxed mb-6">
-                Currently working at a leading tech company where I help build systems that 
-                serve millions of users worldwide. My daily work involves architecting microservices, 
-                optimizing database performance, and ensuring our APIs can handle massive scale.
+              <p>
+                <span className="text-skin-primary">GitHub:</span> 
+                <a 
+                  href="https://github.com/kwekuayepah" 
+                  className="text-skin-accent hover:text-skin-primary transition-colors ml-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  kwekuayepah
+                </a>
               </p>
-              <p className="text-skin-base leading-relaxed mb-6">
-                When I'm not coding, you'll find me contributing to open-source projects, 
-                writing technical articles, or mentoring junior developers. I believe in sharing 
-                knowledge and helping the developer community grow.
-              </p>
-            </section>
-            
-            <section className="border-t border-skin-line pt-8">
-              <h2 className="text-2xl font-medium text-skin-base mb-6">Get in Touch</h2>
-              <p className="text-skin-base leading-relaxed mb-6">
-                I'm always interested in connecting with fellow developers, discussing new technologies, 
-                or collaborating on interesting projects. Feel free to reach out!
-              </p>
-              <div className="space-y-4">
-                <p className="text-skin-base">
-                  <strong>Email:</strong> 
-                  <a href="mailto:kweku@example.com" className="text-skin-accent hover:underline ml-2">
-                    kweku@example.com
-                  </a>
-                </p>
-                <p className="text-skin-base">
-                  <strong>LinkedIn:</strong> 
-                  <a 
-                    href="https://linkedin.com/in/kwekuayepah" 
-                    className="text-skin-accent hover:underline ml-2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    kwekuayepah
-                  </a>
-                </p>
-                <p className="text-skin-base">
-                  <strong>GitHub:</strong> 
-                  <a 
-                    href="https://github.com/kwekuayepah" 
-                    className="text-skin-accent hover:underline ml-2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    kwekuayepah
-                  </a>
-                </p>
-              </div>
-            </section>
+            </div>
           </div>
-        </div>
-      </main>
-    </>
+        </section>
+      </div>
+    </main>
   )
 }

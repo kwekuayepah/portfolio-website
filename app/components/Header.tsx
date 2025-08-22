@@ -1,97 +1,55 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { useTheme } from './ThemeProvider'
-import { Search, Moon, Sun, Menu, X } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <header className="border-b border-skin-line bg-skin-fill">
-      <div className="nav-container">
-        <div className="top-nav-wrap">
-          <Link href="/" className="logo">
-            <div className="site-title">Kweku Ayepah</div>
+    <header className="border-b border-skin-line">
+      <div className="max-w-4xl mx-auto px-8 py-6">
+        <nav className="flex items-center justify-between">
+          <Link 
+            href="/" 
+            className="text-skin-primary hover:text-skin-accent transition-colors text-base font-medium"
+          >
+            Kweku Ayepah
           </Link>
-          <nav id="nav-menu">
+          
+          <div className="flex items-center space-x-12">
+            <Link 
+              href="/posts" 
+              className="text-skin-base hover:text-skin-primary transition-colors text-base"
+            >
+              Posts
+            </Link>
+            <Link 
+              href="/projects" 
+              className="text-skin-base hover:text-skin-primary transition-colors text-base"
+            >
+              Projects
+            </Link>
+            <Link 
+              href="/about" 
+              className="text-skin-base hover:text-skin-primary transition-colors text-base"
+            >
+              About
+            </Link>
             <button 
-              className="hamburger-menu focus-outline"
-              aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-              aria-expanded={isMenuOpen}
-              aria-controls="menu-items"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={toggleTheme}
+              className="text-skin-base hover:text-skin-primary transition-colors p-1"
+              aria-label="Toggle theme"
             >
-              <div className={`icon-container ${isMenuOpen ? 'relative' : 'flex'}`}>
-                <div 
-                  id="first-line" 
-                  className={isMenuOpen ? 'rotate-45 absolute bottom-1/2' : ''}
-                />
-                <div 
-                  id="second-line" 
-                  className={isMenuOpen ? '!w-full -rotate-45 absolute bottom-1/2' : ''}
-                />
-                <div 
-                  id="third-line" 
-                  className={isMenuOpen ? 'display-none' : ''}
-                />
-              </div>
+              {theme === 'dark' ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
             </button>
-            <ul 
-              id="menu-items" 
-              className={`${isMenuOpen ? '' : 'display-none'} sm:flex`}
-            >
-              <li>
-                <Link href="/posts" className="nav-link">
-                  Posts
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="nav-link">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="/tags" className="nav-link">
-                  Tags
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="nav-link">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/search" 
-                  className="group focus-outline p-3 sm:p-1"
-                  aria-label="search"
-                  title="Search"
-                >
-                  <Search className="scale-125 sm:scale-100" size={20} />
-                </Link>
-              </li>
-              <li>
-                <button 
-                  id="theme-btn" 
-                  className="focus-outline"
-                  title="Toggles light & dark"
-                  aria-label={theme}
-                  aria-live="polite"
-                  onClick={toggleTheme}
-                >
-                  {theme === 'dark' ? (
-                    <Sun size={20} />
-                  ) : (
-                    <Moon size={20} />
-                  )}
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
     </header>
   )
