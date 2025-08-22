@@ -1,100 +1,41 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { getAllPosts, getPostsByCategory, type Post } from '@/lib/posts'
 
-interface Post {
-  id: string
-  title: string
-  description: string
-  date: string
-  slug: string
-  tags: string[]
-  readTime: string
-  category: 'technical' | 'personal'
+interface PostsPageProps {
+  searchParams: { category?: string }
 }
 
-const posts: Post[] = [
-  {
-    id: '1',
-    title: 'Building Scalable Microservices Architecture',
-    description: 'Learn how to design and implement microservices that scale with your business needs, covering essential patterns from service discovery to load balancing.',
-    date: 'May 13, 2025',
-    slug: 'building-scalable-microservices-architecture',
-    tags: ['Microservices', 'Architecture', 'Backend'],
-    readTime: '8 min read',
-    category: 'technical'
-  },
-  {
-    id: '2', 
-    title: 'Advanced Backend Development with Node.js and TypeScript',
-    description: 'Dive into advanced Node.js patterns and TypeScript techniques for building robust backend applications with clean architecture.',
-    date: 'May 6, 2025',
-    slug: 'advanced-backend-development-nodejs-typescript',
-    tags: ['Node.js', 'TypeScript', 'Backend'],
-    readTime: '12 min read',
-    category: 'technical'
-  },
-  {
-    id: '3',
-    title: 'Finding Balance: Life as a Software Engineer in Ghana',
-    description: 'Reflections on navigating career growth, personal interests, and cultural identity while building a tech career from Accra.',
-    date: 'April 28, 2025',
-    slug: 'finding-balance-life-engineer-ghana',
-    tags: ['Life', 'Ghana', 'Career', 'Balance'],
-    readTime: '6 min read',
-    category: 'personal'
-  },
-  {
-    id: '4',
-    title: 'The Art of Basketball Strategy: Lessons for Life',
-    description: 'What watching basketball taught me about patience, strategy, and finding beauty in the complexity of teamwork.',
-    date: 'April 15, 2025',
-    slug: 'basketball-strategy-lessons-life',
-    tags: ['Basketball', 'Strategy', 'Life Lessons', 'Sports'],
-    readTime: '5 min read',
-    category: 'personal'
-  },
-  {
-    id: '5',
-    title: 'Database Optimization for High-Traffic Applications',
-    description: 'Master database optimization techniques including indexing strategies, query optimization, and connection pooling for applications handling millions of requests.',
-    date: 'April 9, 2025',
-    slug: 'database-optimization-high-traffic',
-    tags: ['Database', 'Performance', 'Optimization'],
-    readTime: '10 min read',
-    category: 'technical'
-  },
-  {
-    id: '6',
-    title: 'Through the Lens: Street Photography in Accra',
-    description: 'Exploring the vibrant streets of Accra through photography, capturing moments that tell stories of resilience, community, and everyday beauty.',
-    date: 'March 22, 2025',
-    slug: 'through-lens-street-photography-accra',
-    tags: ['Photography', 'Accra', 'Street Art', 'Culture'],
-    readTime: '7 min read',
-    category: 'personal'
+export default async function PostsPage({ searchParams }: PostsPageProps) {
+  const category = searchParams.category as 'technical' | 'personal' | undefined
+  
+  let posts: Post[]
+  if (category) {
+    posts = await getPostsByCategory(category)
+  } else {
+    posts = await getAllPosts()
   }
-]
-
-export default function PostsPage() {
   return (
     <main className="max-w-2xl mx-auto px-4 py-8">
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-medium text-skin-primary">All Posts</h1>
+        <h1 className="text-2xl font-medium text-skin-primary">
+          {category ? `${category.charAt(0).toUpperCase() + category.slice(1)} Posts` : 'All Posts'}
+        </h1>
         <div className="flex space-x-4 text-sm">
           <a 
             href="/posts" 
-            className="text-skin-primary hover:text-skin-accent transition-colors"
+            className={`transition-colors ${!category ? 'text-skin-primary' : 'text-skin-base hover:text-skin-primary'}`}
           >
             All
           </a>
           <a 
             href="/posts?category=technical" 
-            className="text-skin-base hover:text-skin-primary transition-colors"
+            className={`transition-colors ${category === 'technical' ? 'text-skin-primary' : 'text-skin-base hover:text-skin-primary'}`}
           >
             Technical
           </a>
           <a 
             href="/posts?category=personal" 
-            className="text-skin-base hover:text-skin-primary transition-colors"
+            className={`transition-colors ${category === 'personal' ? 'text-skin-primary' : 'text-skin-base hover:text-skin-primary'}`}
           >
             Personal
           </a>
