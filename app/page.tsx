@@ -1,63 +1,9 @@
 import { Github, Linkedin, Mail } from 'lucide-react'
+import { getPostsByCategory, type Post } from '@/lib/posts'
 
-interface Post {
-  id: string
-  title: string
-  description: string
-  date: string
-  slug: string
-  tags: string[]
-  readTime: string
-  category: 'technical' | 'personal'
-}
-
-const technicalPosts: Post[] = [
-  {
-    id: '1',
-    title: 'Building Scalable Microservices Architecture',
-    description: 'Learn how to design and implement microservices that scale with your business needs, covering essential patterns from service discovery to load balancing.',
-    date: 'May 13, 2025',
-    slug: 'building-scalable-microservices-architecture',
-    tags: ['Microservices', 'Architecture', 'Backend'],
-    readTime: '8 min read',
-    category: 'technical'
-  },
-  {
-    id: '2', 
-    title: 'Advanced Backend Development with Node.js and TypeScript',
-    description: 'Dive into advanced Node.js patterns and TypeScript techniques for building robust backend applications with clean architecture.',
-    date: 'May 6, 2025',
-    slug: 'advanced-backend-development-nodejs-typescript',
-    tags: ['Node.js', 'TypeScript', 'Backend'],
-    readTime: '12 min read',
-    category: 'technical'
-  }
-]
-
-const personalPosts: Post[] = [
-  {
-    id: '3',
-    title: 'Finding Balance: Life as a Software Engineer in Ghana',
-    description: 'Reflections on navigating career growth, personal interests, and cultural identity while building a tech career from Accra.',
-    date: 'April 28, 2025',
-    slug: 'finding-balance-life-engineer-ghana',
-    tags: ['Life', 'Ghana', 'Career', 'Balance'],
-    readTime: '6 min read',
-    category: 'personal'
-  },
-  {
-    id: '4',
-    title: 'The Art of Basketball Strategy: Lessons for Life',
-    description: 'What watching basketball taught me about patience, strategy, and finding beauty in the complexity of teamwork.',
-    date: 'April 15, 2025',
-    slug: 'basketball-strategy-lessons-life',
-    tags: ['Basketball', 'Strategy', 'Life Lessons', 'Sports'],
-    readTime: '5 min read',
-    category: 'personal'
-  }
-]
-
-export default function Home() {
+export default async function Home() {
+  const technicalPosts = await getPostsByCategory('technical')
+  const personalPosts = await getPostsByCategory('personal')
   return (
     <main className="max-w-2xl mx-auto px-4 py-16">
       <div className="text-center mb-16">
@@ -156,7 +102,7 @@ export default function Home() {
               </a>
             </div>
           <div className="space-y-4">
-            {personalPosts.map((post) => (
+            {personalPosts.slice(0, 2).map((post) => (
               <article key={post.id} className="border border-skin-line rounded-lg p-4 hover:border-skin-accent transition-colors">
                 <a 
                   href={`/posts/${post.slug}`}
