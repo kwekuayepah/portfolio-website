@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <header className="border-b border-skin-line">
-      <div className="max-w-4xl mx-auto px-8 py-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 py-6">
         <nav className="flex items-center justify-between">
           <Link 
             href="/" 
@@ -18,22 +18,22 @@ export default function Header() {
             Kweku Ayepah
           </Link>
           
-          <div className="flex items-center space-x-12">
+          <div className="flex items-center space-x-4 sm:space-x-8 md:space-x-12">
             <Link 
               href="/posts" 
-              className="text-skin-base hover:text-skin-primary transition-colors text-base"
+              className="text-skin-base hover:text-skin-primary transition-colors text-sm sm:text-base"
             >
               Posts
             </Link>
             <Link 
               href="/projects" 
-              className="text-skin-base hover:text-skin-primary transition-colors text-base"
+              className="text-skin-base hover:text-skin-primary transition-colors text-sm sm:text-base"
             >
               Projects
             </Link>
             <Link 
               href="/about" 
-              className="text-skin-base hover:text-skin-primary transition-colors text-base"
+              className="text-skin-base hover:text-skin-primary transition-colors text-sm sm:text-base"
             >
               About
             </Link>
