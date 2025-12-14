@@ -20,8 +20,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        mono: ['var(--font-ibm-plex-mono)', 'ui-monospace', 'SFMono-Regular', 'Roboto Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'],
-        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['var(--font-dm-mono)', 'ui-monospace', 'SFMono-Regular', 'Roboto Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'],
+        sans: ['var(--font-dm-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
