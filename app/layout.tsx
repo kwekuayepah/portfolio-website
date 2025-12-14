@@ -1,15 +1,20 @@
 import type { Metadata } from 'next'
-import { IBM_Plex_Mono } from 'next/font/google'
+import { DM_Sans, DM_Mono } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-const ibmPlexMono = IBM_Plex_Mono({
+const dmMono = DM_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '500'],
   style: ['normal', 'italic'],
-  variable: '--font-ibm-plex-mono'
+  variable: '--font-dm-mono'
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans'
 })
 
 export const metadata: Metadata = {
@@ -42,7 +47,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body className={`${ibmPlexMono.variable} font-mono antialiased bg-skin-fill text-skin-base transition-colors duration-300`}>
+      <body className={`${dmMono.variable} ${dmSans.variable} font-mono antialiased bg-skin-fill text-skin-base transition-colors duration-300`}>
         <ThemeProvider>
           <Header />
           {children}
