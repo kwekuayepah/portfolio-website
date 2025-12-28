@@ -18,12 +18,12 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'The Kweku Ayepah',
+  title: 'Kweku Ayepah',
   description: 'A place for developers to have a great time while learning about backend development, microservices, and scalable systems.',
   keywords: 'backend engineer, software engineer, microservices, cloud architecture, TypeScript, Node.js, Python',
   authors: [{ name: 'Kweku Ayepah' }],
   openGraph: {
-    title: 'Kweku Ayepah | Welcome, Developer',
+    title: 'Kweku Ayepah',
     description: 'A place for developers to have a great time while learning about backend development.',
     type: 'website',
   },
