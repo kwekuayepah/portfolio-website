@@ -62,7 +62,7 @@ export default function Logo({
                     <MarkPath />
                 </svg>
                 <div className="flex flex-col">
-                    <span className="font-serif text-xl sm:text-2xl leading-none text-skin-primary">Kweku Ayepah</span>
+                    <span className="font-sans text-xl sm:text-2xl font-bold leading-none text-skin-primary">Kweku Ayepah</span>
                     <span className="font-sans text-xs font-light italic text-skin-base mt-0.5">Software Engineer</span>
                 </div>
             </div>
@@ -85,7 +85,7 @@ export default function Logo({
                     <path d="M12 52 L74 52" stroke={color} strokeWidth="6" strokeLinecap="round" />
                     <path d="M46 52 L46 12 L88 88" stroke={color} strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                 </svg>
-                <span className="font-serif text-lg text-skin-primary">Kweku Ayepah</span>
+                <span className="font-sans text-lg font-medium text-skin-primary">Kweku Ayepah</span>
             </div>
         )
     }
@@ -102,7 +102,7 @@ export default function Logo({
                 <MarkPath />
             </svg>
             <div className="flex flex-col items-center">
-                <span className="font-serif text-2xl text-skin-primary">Kweku Ayepah</span>
+                <span className="font-sans text-2xl font-bold text-skin-primary">Kweku Ayepah</span>
                 <span className="font-sans text-sm font-light italic text-skin-base">Software Engineer</span>
             </div>
         </div>
