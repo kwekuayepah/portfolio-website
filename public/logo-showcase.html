@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KA Logo — Final Package</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: #0a0a0a;
+            color: #f0f0f0;
+            padding: 80px 60px;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .section-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #444;
+            margin-bottom: 32px;
+        }
+        
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: #1a1a1a;
+            margin: 80px 0;
+        }
+        
+        /* Primary Logo Display */
+        .primary-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 0;
+        }
+        
+        .primary-mark {
+            margin-bottom: 60px;
+        }
+        
+        .primary-lockup {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .primary-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .primary-name {
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #f0f0f0;
+        }
+        
+        .primary-title {
+            font-size: 14px;
+            font-weight: 300;
+            font-style: italic;
+            color: #666;
+            letter-spacing: 0.01em;
+        }
+        
+        /* Lockup Variations */
+        .lockups-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px;
+        }
+        
+        .lockup-item {
+            background: #111;
+            border-radius: 12px;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+        
+        .lockup-item.light {
+            background: #f5f4f2;
+        }
+        
+        .lockup-item.light svg path {
+            stroke: #1a1a1a;
+        }
+        
+        .lockup-item.light .lockup-name,
+        .lockup-item.light .lockup-title {
+            color: #1a1a1a;
+        }
+        
+        .lockup-item.light .lockup-title {
+            color: #666;
+        }
+        
+        .lockup-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #444;
+            margin-top: 24px;
+        }
+        
+        .lockup-item.light .lockup-label {
+            color: #999;
+        }
+        
+        /* Horizontal Lockup */
+        .lockup-horizontal {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .lockup-name {
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #f0f0f0;
+        }
+        
+        .lockup-title {
+            font-size: 13px;
+            font-weight: 300;
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* Stacked Lockup */
+        .lockup-stacked {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+        }
+        
+        /* Minimal Lockup */
+        .lockup-minimal {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        
+        .lockup-minimal .lockup-name {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        /* Typography Section */
+        .typography-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 48px;
+        }
+        
+        .type-option {
+            padding: 32px;
+            background: #111;
+            border-radius: 8px;
+        }
+        
+        .type-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        
+        .type-sample-name {
+            font-size: 24px;
+            margin-bottom: 4px;
+            color: #e8e8e8;
+        }
+        
+        .type-sample-title {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .type-source-serif .type-sample-name {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-weight: 400;
+        }
+        .type-source-serif .type-sample-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .type-cormorant .type-sample-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+        .type-cormorant .type-sample-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .type-inter .type-sample-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        .type-inter .type-sample-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+        
+        .type-mixed .type-sample-name {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-weight: 400;
+        }
+        .type-mixed .type-sample-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        /* Size Reference */
+        .sizes-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 0;
+        }
+        
+        .size-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .size-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            color: #444;
+        }
+        
+        /* Color Variants */
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+        
+        .color-swatch {
+            padding: 40px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .color-info {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+        
+        /* Usage Guidelines */
+        .guidelines {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .guideline-item {
+            padding: 24px;
+            background: #111;
+            border-radius: 8px;
+        }
+        
+        .guideline-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 12px;
+        }
+        
+        .guideline-text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .guideline-text code {
+            background: #1a1a1a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Primary Logo -->
+    <div class="section-label">Primary Mark</div>
+    
+    <div class="primary-display">
+        <div class="primary-mark">
+            <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+        </div>
+        
+        <div class="primary-lockup">
+            <svg width="56" height="56" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <div class="primary-text">
+                <div class="primary-name">Kweku Ayepah</div>
+                <div class="primary-title">Software Engineer</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- Lockup Variations -->
+    <div class="section-label">Lockup Variations</div>
+    
+    <div class="lockups-grid">
+        <!-- Horizontal - Dark -->
+        <div class="lockup-item">
+            <div class="lockup-horizontal">
+                <svg width="44" height="44" viewBox="0 0 100 100" fill="none">
+                    <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <div>
+                    <div class="lockup-name">Kweku Ayepah</div>
+                    <div class="lockup-title">Software Engineer</div>
+                </div>
+            </div>
+            <span class="lockup-label">Horizontal — Dark</span>
+        </div>
+        
+        <!-- Horizontal - Light -->
+        <div class="lockup-item light">
+            <div class="lockup-horizontal">
+                <svg width="44" height="44" viewBox="0 0 100 100" fill="none">
+                    <path d="M12 88 L12 12" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M12 52 L38 12" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M12 52 L74 52" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M46 52 L46 12 L88 88" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <div>
+                    <div class="lockup-name">Kweku Ayepah</div>
+                    <div class="lockup-title">Software Engineer</div>
+                </div>
+            </div>
+            <span class="lockup-label">Horizontal — Light</span>
+        </div>
+        
+        <!-- Stacked - Dark -->
+        <div class="lockup-item">
+            <div class="lockup-stacked">
+                <svg width="52" height="52" viewBox="0 0 100 100" fill="none">
+                    <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <div>
+                    <div class="lockup-name">Kweku Ayepah</div>
+                    <div class="lockup-title">Software Engineer</div>
+                </div>
+            </div>
+            <span class="lockup-label">Stacked — Dark</span>
+        </div>
+        
+        <!-- Minimal - Dark -->
+        <div class="lockup-item">
+            <div class="lockup-minimal">
+                <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+                    <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <div class="lockup-name" style="font-size: 18px;">Kweku Ayepah</div>
+            </div>
+            <span class="lockup-label">Minimal — Header Use</span>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- Typography Options -->
+    <div class="section-label">Typography Pairing Options</div>
+    
+    <div class="typography-showcase">
+        <div class="type-option type-source-serif">
+            <div class="type-label">Source Serif 4 — Recommended</div>
+            <div class="type-sample-name">Kweku Ayepah</div>
+            <div class="type-sample-title">Software Engineer</div>
+        </div>
+        
+        <div class="type-option type-cormorant">
+            <div class="type-label">Cormorant Garamond — Editorial</div>
+            <div class="type-sample-name">Kweku Ayepah</div>
+            <div class="type-sample-title">Software Engineer</div>
+        </div>
+        
+        <div class="type-option type-inter">
+            <div class="type-label">Inter — Modern Sans</div>
+            <div class="type-sample-name">Kweku Ayepah</div>
+            <div class="type-sample-title">Software Engineer</div>
+        </div>
+        
+        <div class="type-option type-mixed">
+            <div class="type-label">Mixed — Serif + Sans</div>
+            <div class="type-sample-name">Kweku Ayepah</div>
+            <div class="type-sample-title">Software Engineer</div>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- Size Reference -->
+    <div class="section-label">Size Reference</div>
+    
+    <div class="sizes-row">
+        <div class="size-item">
+            <svg width="16" height="16" viewBox="0 0 100 100" fill="none">
+                <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="14" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="14" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="14" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <span class="size-label">16px</span>
+        </div>
+        <div class="size-item">
+            <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+                <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="10" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="10" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="10" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <span class="size-label">24px</span>
+        </div>
+        <div class="size-item">
+            <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+                <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="7" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="7" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="7" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <span class="size-label">32px</span>
+        </div>
+        <div class="size-item">
+            <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
+                <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="6" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="6" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="6" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <span class="size-label">48px</span>
+        </div>
+        <div class="size-item">
+            <svg width="64" height="64" viewBox="0 0 100 100" fill="none">
+                <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <span class="size-label">64px</span>
+        </div>
+        <div class="size-item">
+            <svg width="96" height="96" viewBox="0 0 100 100" fill="none">
+                <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <span class="size-label">96px</span>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- Color Variants -->
+    <div class="section-label">Color Applications</div>
+    
+    <div class="colors-grid">
+        <div class="color-swatch" style="background: #0a0a0a; border: 1px solid #222;">
+            <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
+                <path d="M12 88 L12 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#f0f0f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <div class="color-info" style="color: #666;">
+                White on Dark<br/>
+                #f0f0f0 on #0a0a0a
+            </div>
+        </div>
+        
+        <div class="color-swatch" style="background: #f5f4f2;">
+            <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
+                <path d="M12 88 L12 12" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <div class="color-info" style="color: #888;">
+                Dark on Light<br/>
+                #1a1a1a on #f5f4f2
+            </div>
+        </div>
+        
+        <div class="color-swatch" style="background: #1a1a1a;">
+            <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
+                <path d="M12 88 L12 12" stroke="#666" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L38 12" stroke="#666" stroke-width="5" stroke-linecap="round"/>
+                <path d="M12 52 L74 52" stroke="#666" stroke-width="5" stroke-linecap="round"/>
+                <path d="M46 52 L46 12 L88 88" stroke="#666" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <div class="color-info" style="color: #555;">
+                Subtle / Muted<br/>
+                #666666
+            </div>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- Usage Guidelines -->
+    <div class="section-label">Quick Guidelines</div>
+    
+    <div class="guidelines">
+        <div class="guideline-item">
+            <div class="guideline-title">Minimum Size</div>
+            <div class="guideline-text">
+                Don't go below 16px for the mark alone. For the horizontal lockup, minimum 32px mark height.
+            </div>
+        </div>
+        
+        <div class="guideline-item">
+            <div class="guideline-title">Clear Space</div>
+            <div class="guideline-text">
+                Maintain padding equal to at least 25% of the mark's width on all sides.
+            </div>
+        </div>
+        
+        <div class="guideline-item">
+            <div class="guideline-title">Typography</div>
+            <div class="guideline-text">
+                Use <code>Source Serif 4</code> for headings and name. <code>Inter</code> for body text and UI elements.
+            </div>
+        </div>
+        
+        <div class="guideline-item">
+            <div class="guideline-title">Favicon</div>
+            <div class="guideline-text">
+                Use the mark alone with increased stroke width (8-14) at 16-32px sizes for clarity.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

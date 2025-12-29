@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { DM_Sans, DM_Mono } from 'next/font/google'
+import { DM_Sans, DM_Mono, Source_Serif_4 } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
 import Header from './components/Header'
@@ -15,6 +15,13 @@ const dmMono = DM_Mono({
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans'
+})
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-source-serif',
+  weight: ['300', '400', '600'],
+  style: ['normal', 'italic']
 })
 
 export const metadata: Metadata = {
@@ -47,7 +54,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body className={`${dmMono.variable} ${dmSans.variable} font-mono antialiased bg-skin-fill text-skin-base transition-colors duration-300`}>
+      <body className={`${dmMono.variable} ${dmSans.variable} ${sourceSerif.variable} font-mono antialiased bg-skin-fill text-skin-base transition-colors duration-300`}>
         <ThemeProvider>
           <Header />
           {children}
