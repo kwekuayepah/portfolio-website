@@ -25,14 +25,23 @@ const sourceSerif = Source_Serif_4({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kwekuayepah.com'),
   title: 'Kweku Ayepah',
-  description: 'A place for developers to have a great time while learning about backend development, microservices, and scalable systems.',
-  keywords: 'backend engineer, software engineer, microservices, cloud architecture, TypeScript, Node.js, Python',
+  description: 'Software Engineer specializing in backend development, microservices, and scalable systems.',
+  keywords: 'backend engineer, software engineer, microservices, cloud architecture, TypeScript, Node.js, Python, Kweku Ayepah',
   authors: [{ name: 'Kweku Ayepah' }],
   openGraph: {
     title: 'Kweku Ayepah',
-    description: 'A place for developers to have a great time while learning about backend development.',
+    description: 'Software Engineer specializing in backend development, microservices, and scalable systems.',
+    url: 'https://kwekuayepah.com',
+    siteName: 'Kweku Ayepah',
+    locale: 'en_US',
     type: 'website',
+  },
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
   },
 }
 
